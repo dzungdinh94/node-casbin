@@ -6,9 +6,9 @@
   "typings": "lib/cjs/index.d.ts",
   "module": "lib/esm/index.js",
   "scripts": {
-    "prepack": "npx run-s lint test build",
-    "postpack": "npx run-s clean",
-    "build": "npx run-s clean && run-p build:*",
+    "prepack": "npm run lint test build",
+    "postpack": "npm run clean",
+    "build": "npm run clean && npm run build:*",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "test": "jest",
