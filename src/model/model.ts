@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 // Copyright 2018 The Casbin Authors. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -167,7 +168,9 @@ export class Model {
   // buildIncrementalRoleLinks provides incremental build the role inheritance relations.
   public async buildIncrementalRoleLinks(rm: rbac.RoleManager, op: PolicyOp, sec: string, ptype: string, rules: string[][]): Promise<void> {
     if (sec === 'g') {
-      await this.model.get(sec) &&  this.model.get(sec)!.get(ptype) && this.model.get(sec)!.get(ptype)!.buildIncrementalRoleLinks(rm, op, rules);
+      (await this.model.get(sec)) &&
+        this.model.get(sec)!.get(ptype) &&
+        this.model.get(sec)!.get(ptype)!.buildIncrementalRoleLinks(rm, op, rules);
     }
   }
 

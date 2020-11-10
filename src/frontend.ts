@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 // Copyright 2020 The Casbin Authors. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +30,7 @@ export async function casbinJsGetPermissionForUser(e: Enforcer, user: string): P
   const m = e.getModel().model;
   let s = '';
   s += '[request_definition]\n';
-  s += `r = ${m.get('r') && m.get('r')!.get('r') &&  m.get('r')!.get('r')!.value.replace(/_/g, '.')}\n`;
+  s += `r = ${m.get('r') && m.get('r')!.get('r') && m.get('r')!.get('r')!.value.replace(/_/g, '.')}\n`;
   s += '[policy_definition]\n';
   s += `p = ${m.get('p')?.get('p')?.value.replace(/_/g, '.')}\n`;
   if (m.get('g')?.get('g') !== undefined) {
