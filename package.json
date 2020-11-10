@@ -43,7 +43,7 @@
     "semantic-release": "^15.13.31",
     "ts-jest": "^24.0.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "await-lock": "^2.0.1",
